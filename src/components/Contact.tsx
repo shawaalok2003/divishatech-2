@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 
@@ -11,7 +10,6 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    inquiryType: "",
     message: "",
   });
 
@@ -21,7 +19,7 @@ const Contact = () => {
       title: "Message Sent!",
       description: "Thank you for contacting VKD Group. We'll get back to you soon.",
     });
-    setFormData({ name: "", email: "", inquiryType: "", message: "" });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   return (
@@ -63,26 +61,6 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
                 />
-              </div>
-
-              <div>
-                <label htmlFor="inquiryType" className="block text-sm font-medium mb-2 text-foreground">
-                  Inquiry Type
-                </label>
-                <Select
-                  value={formData.inquiryType}
-                  onValueChange={(value) => setFormData({ ...formData, inquiryType: value })}
-                >
-                  <SelectTrigger>
-                    <SelectValue placeholder="Select inquiry type" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="partnership">Partnership</SelectItem>
-                    <SelectItem value="business">Business Query</SelectItem>
-                    <SelectItem value="general">General Information</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
-                  </SelectContent>
-                </Select>
               </div>
 
               <div>

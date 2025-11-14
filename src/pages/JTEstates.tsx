@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import VisionMission from "@/components/VisionMission";
 import { Building, Home, TrendingUp, Shield } from "lucide-react";
@@ -233,6 +234,8 @@ const JTEstates = () => {
           </Button>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

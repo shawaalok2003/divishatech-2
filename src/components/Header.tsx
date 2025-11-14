@@ -54,30 +54,40 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-primary/95 backdrop-blur-sm shadow-lg" : "bg-primary"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-8"
+      style={{ backgroundColor: "transparent" }}
     >
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <div className="container mx-auto px-4">
+        <div 
+          className="flex items-center justify-between"
+          style={{
+            background: "hsl(160 20% 30%)",
+            borderRadius: "25px",
+            padding: "12px 24px",
+            boxShadow: "rgba(0, 69, 52, 0.25) 0px 2px 8px"
+          }}
+        >
           <Link
             to="/"
-            className="text-2xl font-bold text-primary-foreground hover:opacity-80 transition-opacity"
+            className="text-white font-bold text-xl md:text-2xl tracking-tight hover:opacity-80 transition-opacity"
+            style={{ textDecoration: "none" }}
           >
             VKD Group
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("hero")}
-              className="text-primary-foreground hover:text-accent transition-colors font-medium"
+              className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
+              style={{ textDecoration: "none" }}
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-primary-foreground hover:text-accent transition-colors font-medium"
+              className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
+              style={{ textDecoration: "none" }}
             >
               About
             </button>
@@ -89,7 +99,8 @@ const Header = () => {
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button
-                className="text-primary-foreground hover:text-accent transition-colors font-medium flex items-center gap-1"
+                className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 flex items-center gap-1"
+                style={{ textDecoration: "none" }}
               >
                 Businesses
                 <ChevronDown className={`h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
@@ -119,67 +130,78 @@ const Header = () => {
 
             <button
               onClick={() => scrollToSection("leadership")}
-              className="text-primary-foreground hover:text-accent transition-colors font-medium"
+              className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
+              style={{ textDecoration: "none" }}
             >
               Leadership
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-primary-foreground hover:text-accent transition-colors font-medium"
+              className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
+              style={{ textDecoration: "none" }}
             >
               Contact
             </button>
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="bg-accent text-accent-foreground font-semibold px-6 py-2 rounded-full hover:opacity-90 transition-opacity"
+              style={{ textDecoration: "none" }}
+            >
+              Get in Touch
+            </button>
           </nav>
 
-          <div className="flex items-center gap-4">
-            <Button
-              onClick={() => scrollToSection("contact")}
-              className="hidden lg:flex bg-accent text-accent-foreground hover:bg-accent/90 font-semibold rounded-full px-6"
-            >
-              Get In Touch
-            </Button>
-
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="lg:hidden text-primary-foreground"
-            >
-              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden text-white p-2"
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 animate-fade-in">
+          <div 
+            className="md:hidden mt-4 pb-4 animate-fade-in"
+            style={{
+              background: "hsl(160 20% 30%)",
+              borderRadius: "25px",
+              padding: "24px",
+              boxShadow: "rgba(0, 69, 52, 0.25) 0px 2px 8px"
+            }}
+          >
             <nav className="flex flex-col gap-4">
               <button
                 onClick={() => scrollToSection("hero")}
-                className="text-primary-foreground hover:text-accent transition-colors font-medium text-left"
+                className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"
+                style={{ textDecoration: "none" }}
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-primary-foreground hover:text-accent transition-colors font-medium text-left"
+                className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"
+                style={{ textDecoration: "none" }}
               >
                 About
               </button>
               
               {/* Mobile Businesses Section */}
-              <div className="border-t border-primary-foreground/20 pt-4">
-                <div className="text-primary-foreground font-semibold mb-3">Our Businesses</div>
-                <div className="flex flex-col gap-2 pl-4">
+              <div className="border-t border-white/20 pt-4">
+                <div className="text-white font-semibold mb-3 px-4">Our Businesses</div>
+                <div className="flex flex-col gap-2">
                   {businesses.map((business, index) => (
                     <button
                       key={index}
                       onClick={() => handleBusinessClick(business.path)}
-                      className="text-left py-2"
+                      className="text-left px-4 py-2 hover:bg-white/10 rounded-full transition-all duration-200"
                     >
                       <div className="text-xs text-accent font-semibold mb-1">
                         {business.category}
                       </div>
-                      <div className="text-sm text-primary-foreground">
+                      <div className="text-sm text-white">
                         {business.name}
                       </div>
                     </button>
@@ -189,23 +211,26 @@ const Header = () => {
 
               <button
                 onClick={() => scrollToSection("leadership")}
-                className="text-primary-foreground hover:text-accent transition-colors font-medium text-left"
+                className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"
+                style={{ textDecoration: "none" }}
               >
                 Leadership
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-primary-foreground hover:text-accent transition-colors font-medium text-left"
+                className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"
+                style={{ textDecoration: "none" }}
               >
                 Contact
               </button>
               
-              <Button
+              <button
                 onClick={() => scrollToSection("contact")}
-                className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold rounded-full px-6 w-full"
+                className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity w-full"
+                style={{ textDecoration: "none" }}
               >
-                Get In Touch
-              </Button>
+                Get in Touch
+              </button>
             </nav>
           </div>
         )}

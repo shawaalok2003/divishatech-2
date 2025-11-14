@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import VisionMission from "@/components/VisionMission";
 import { Store, Award, Heart, Sparkles } from "lucide-react";
@@ -163,6 +164,8 @@ const FreshOBasket = () => {
           </Button>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

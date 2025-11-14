@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import VisionMission from "@/components/VisionMission";
 import { Hotel, Wifi, Car, Coffee } from "lucide-react";
@@ -193,6 +194,8 @@ const GrandMuziris = () => {
           </Button>
         </div>
       </section>
+      
+      <Footer />
     </div>
   );
 };

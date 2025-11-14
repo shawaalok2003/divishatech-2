@@ -37,7 +37,7 @@ const Leadership = () => {
               />
               <div className="p-8">
                 <h3 className="text-2xl font-bold text-foreground mb-2">{leader.name}</h3>
-                <p className="text-primary font-semibold mb-4">{leader.title}</p>
+                <p className="text-accent font-semibold mb-4 text-lg" style={{ color: 'hsl(42 88% 65%)' }}>{leader.title}</p>
                 <p className="text-muted-foreground leading-relaxed">{leader.bio}</p>
               </div>
             </Card>

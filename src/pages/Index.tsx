@@ -7,6 +7,7 @@ import Testimonials from "@/components/Testimonials";
 import Future from "@/components/Future";
 import Leadership from "@/components/Leadership";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
         <Leadership />
         <Contact />
       </main>
+      <Footer />
     </div>
   );
 };
