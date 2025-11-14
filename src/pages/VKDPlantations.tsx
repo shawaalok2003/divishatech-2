@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
+import OtherBusinesses from "@/components/OtherBusinesses";
+import VisionMission from "@/components/VisionMission";
 import { Leaf, TreePine, Droplets, Sprout } from "lucide-react";
 
 const VKDPlantations = () => {
@@ -210,6 +212,12 @@ const VKDPlantations = () => {
           </div>
         </div>
       </section>
+
+      {/* Vision & Mission */}
+      <VisionMission />
+
+      {/* Other Businesses */}
+      <OtherBusinesses currentPath="/vkd-plantations" />
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-center">

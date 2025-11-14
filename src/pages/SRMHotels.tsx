@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
+import OtherBusinesses from "@/components/OtherBusinesses";
+import VisionMission from "@/components/VisionMission";
 import { Building2, Users2, Utensils, Briefcase } from "lucide-react";
 
 const SRMHotels = () => {
@@ -179,6 +181,12 @@ const SRMHotels = () => {
           </div>
         </div>
       </section>
+
+      {/* Vision & Mission */}
+      <VisionMission />
+
+      {/* Other Businesses */}
+      <OtherBusinesses currentPath="/srm-hotels" />
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-center">

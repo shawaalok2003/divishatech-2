@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
+import OtherBusinesses from "@/components/OtherBusinesses";
+import VisionMission from "@/components/VisionMission";
 import { Truck, Leaf, Users, CheckCircle } from "lucide-react";
 
 const VegetablesWholesale = () => {
@@ -115,6 +117,12 @@ const VegetablesWholesale = () => {
           </div>
         </div>
       </section>
+
+      {/* Vision & Mission */}
+      <VisionMission />
+
+      {/* Other Businesses */}
+      <OtherBusinesses currentPath="/vegetables-wholesale" />
 
       {/* CTA Section */}
       <section className="py-20 bg-primary text-center">
