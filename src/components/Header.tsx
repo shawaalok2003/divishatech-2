@@ -54,19 +54,17 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "py-4" : "py-8"
-      }`}
-      style={{ backgroundColor: "transparent" }}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{ 
+        backgroundColor: "hsl(160 20% 30%)",
+        boxShadow: "rgba(0, 69, 52, 0.25) 0px 2px 8px"
+      }}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-4">
         <div 
           className="flex items-center justify-between"
           style={{
-            background: "hsl(160 20% 30%)",
-            borderRadius: "25px",
-            padding: "12px 24px",
-            boxShadow: "rgba(0, 69, 52, 0.25) 0px 2px 8px"
+            padding: "12px 24px"
           }}
         >
           <Link
