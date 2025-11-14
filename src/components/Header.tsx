@@ -54,7 +54,9 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-8"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled ? "py-4" : "py-8"
+      }`}
       style={{ backgroundColor: "transparent" }}
     >
       <div className="container mx-auto px-4">
@@ -128,6 +130,13 @@ const Header = () => {
               )}
             </div>
 
+            <Link
+              to="/csr"
+              className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
+              style={{ textDecoration: "none" }}
+            >
+              CSR
+            </Link>
             <button
               onClick={() => scrollToSection("leadership")}
               className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
@@ -209,6 +218,14 @@ const Header = () => {
                 </div>
               </div>
 
+              <Link
+                to="/csr"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"
+                style={{ textDecoration: "none" }}
+              >
+                CSR
+              </Link>
               <button
                 onClick={() => scrollToSection("leadership")}
                 className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"

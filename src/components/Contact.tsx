@@ -105,16 +105,20 @@ const Contact = () => {
               </a>
             </Card>
 
-            <Card className="p-6">
-              <h3 className="text-xl font-bold text-foreground mb-2">Website</h3>
-              <a
-                href="http://www.vkd.org.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                www.vkd.org.in
-              </a>
+            <Card className="p-6 overflow-hidden">
+              <h3 className="text-xl font-bold text-foreground mb-4">Location</h3>
+              <div className="relative w-full h-[200px] rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125740.14798933588!2d76.22309877910158!3d9.93174729999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d514abec6bf%3A0xbd582caa5844192!2sKochi%2C%20Kerala%2C%20India!5e0!3m2!1sen!2s!4v1234567890123"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="VKD Group Location - Kochi, Kerala"
+                ></iframe>
+              </div>
             </Card>
           </div>
         </div>
