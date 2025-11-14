@@ -29,37 +29,22 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Button
             onClick={() => scrollToSection("businesses")}
-            className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+            className="bg-white text-black hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
           >
             Explore Our Group
           </Button>
           <Button
             onClick={() => scrollToSection("contact")}
-            variant="outline"
-            className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+            className="bg-white text-black hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
           >
             Partner With Us
           </Button>
-        </div>
-        
-        {/* Stats section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 max-w-4xl mx-auto">
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-accent mb-2">8+</div>
-            <div className="text-primary-foreground/80 text-sm md:text-base">Business Divisions</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-accent mb-2">500+</div>
-            <div className="text-primary-foreground/80 text-sm md:text-base">Employees</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-accent mb-2">1000+</div>
-            <div className="text-primary-foreground/80 text-sm md:text-base">Business Partners</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl md:text-5xl font-bold text-accent mb-2">5+</div>
-            <div className="text-primary-foreground/80 text-sm md:text-base">States Presence</div>
-          </div>
+          <Button
+            onClick={() => scrollToSection("contact")}
+            className="bg-white text-black hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+          >
+            Contact VKD Group
+          </Button>
         </div>
       </div>
     </section>
