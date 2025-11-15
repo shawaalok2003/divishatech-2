@@ -171,12 +171,13 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
           <div 
-            className="md:hidden mt-4 pb-4 animate-fade-in"
+            className="md:hidden mt-4 pb-4 animate-fade-in overflow-y-auto"
             style={{
               background: "hsl(160 20% 30%)",
               borderRadius: "25px",
               padding: "24px",
-              boxShadow: "rgba(0, 69, 52, 0.25) 0px 2px 8px"
+              boxShadow: "rgba(0, 69, 52, 0.25) 0px 2px 8px",
+              maxHeight: "calc(100vh - 120px)"
             }}
           >
             <nav className="flex flex-col gap-4">
