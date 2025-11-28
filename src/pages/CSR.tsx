@@ -205,29 +205,7 @@ const CSR = () => {
       </section>
 
       {/* Pillars Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
-            Our Pillars of Positive Impact
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {pillars.map((pillar, index) => {
-              const Icon = pillar.icon;
-              return (
-                <Card key={index} className="hover:shadow-xl transition-shadow">
-                  <CardContent className="pt-6">
-                    <div className="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-4">
-                      <Icon className="h-7 w-7 text-white" />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">{pillar.title}</h3>
-                    <p className="text-muted-foreground">{pillar.description}</p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Initiatives Section */}
       <section id="initiatives" className="py-20 bg-background">
@@ -277,29 +255,7 @@ const CSR = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12">
-            Voices from the Ground
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-xl transition-shadow">
-                <CardContent className="pt-8">
-                  <Quote className="h-10 w-10 text-primary mb-4" />
-                  <p className="text-lg text-foreground mb-6 italic">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="border-t pt-4">
-                    <p className="font-bold text-foreground">{testimonial.name}</p>
-                    <p className="text-sm text-muted-foreground">{testimonial.role}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Future Commitment Section */}
       <section className="py-20 bg-gradient-to-br from-accent/5 to-primary/5">

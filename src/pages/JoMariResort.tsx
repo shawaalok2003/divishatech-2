@@ -104,55 +104,7 @@ const JoMariResort = () => {
       </section>
 
       {/* Packages Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-12">
-            Wellness Packages
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="p-8 hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Weekend Escape</h3>
-              <div className="text-3xl font-bold text-primary mb-4">₹12,999</div>
-              <p className="text-muted-foreground mb-6">2 Nights / 3 Days</p>
-              <ul className="space-y-3 text-muted-foreground mb-6">
-                <li>• Deluxe Room Accommodation</li>
-                <li>• Daily Yoga Sessions</li>
-                <li>• Organic Breakfast & Dinner</li>
-                <li>• 1 Spa Treatment</li>
-                <li>• Nature Walks</li>
-              </ul>
-              <Button className="w-full" variant="outline">Select Package</Button>
-            </Card>
-            <Card className="p-8 hover:shadow-xl transition-shadow border-2 border-primary">
-              <Badge className="mb-2 bg-primary text-primary-foreground">Most Popular</Badge>
-              <h3 className="text-2xl font-bold text-foreground mb-2">Wellness Retreat</h3>
-              <div className="text-3xl font-bold text-primary mb-4">₹32,999</div>
-              <p className="text-muted-foreground mb-6">5 Nights / 6 Days</p>
-              <ul className="space-y-3 text-muted-foreground mb-6">
-                <li>• Premium Suite Accommodation</li>
-                <li>• Personalized Yoga & Meditation</li>
-                <li>• All Organic Meals Included</li>
-                <li>• 3 Ayurvedic Spa Treatments</li>
-                <li>• Wellness Consultation</li>
-              </ul>
-              <Button className="w-full bg-primary text-primary-foreground">Select Package</Button>
-            </Card>
-            <Card className="p-8 hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-foreground mb-2">Complete Detox</h3>
-              <div className="text-3xl font-bold text-primary mb-4">₹59,999</div>
-              <p className="text-muted-foreground mb-6">10 Nights / 11 Days</p>
-              <ul className="space-y-3 text-muted-foreground mb-6">
-                <li>• Luxury Villa Accommodation</li>
-                <li>• Daily Yoga & Meditation</li>
-                <li>• Customized Detox Meal Plan</li>
-                <li>• Full Ayurvedic Therapy Course</li>
-                <li>• Personal Wellness Coach</li>
-              </ul>
-              <Button className="w-full" variant="outline">Select Package</Button>
-            </Card>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Vision & Mission removed per request */}
 

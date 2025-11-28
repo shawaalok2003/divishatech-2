@@ -97,54 +97,7 @@ const VKDPlantations = () => {
       </section>
 
       {/* Our Crops Section */}
-      <section className="py-20 bg-section-bg">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-12">
-            Plantation Portfolio
-          </h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="p-8 hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Spice Plantations</h3>
-              <p className="text-muted-foreground mb-4">
-                Cultivating premium quality spices including cardamom, pepper, and cinnamon using organic methods.
-              </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Cardamom estates</li>
-                <li>• Black pepper vines</li>
-                <li>• Cinnamon cultivation</li>
-                <li>• Organic certification</li>
-              </ul>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-shadow border-2 border-primary">
-              <Badge className="mb-3 bg-primary text-primary-foreground">Flagship</Badge>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Tea Gardens</h3>
-              <p className="text-muted-foreground mb-4">
-                Sprawling tea estates producing high-quality tea varieties with sustainable practices.
-              </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Orthodox tea production</li>
-                <li>• Organic tea varieties</li>
-                <li>• Shade-grown methods</li>
-                <li>• Fair trade practices</li>
-              </ul>
-            </Card>
-
-            <Card className="p-8 hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Fruit Orchards</h3>
-              <p className="text-muted-foreground mb-4">
-                Mixed fruit cultivation with focus on native species and biodiversity preservation.
-              </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Mango & jackfruit</li>
-                <li>• Native fruit species</li>
-                <li>• Agroforestry model</li>
-                <li>• Chemical-free farming</li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Impact Section */}
       <section className="py-20 bg-background">

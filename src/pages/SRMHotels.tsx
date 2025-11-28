@@ -85,28 +85,10 @@ const SRMHotels = () => {
           </div>
         </div>
       </section>
-      
+
 
       {/* Facilities Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-4">
-            Perfect for Business & Leisure
-          </h2>
-          <p className="text-lg text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-            SRM Hotels Coimbatore caters to both corporate travelers and families seeking comfort and convenience.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {facilities.map((facility, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-xl transition-shadow">
-                <facility.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-foreground mb-3">{facility.title}</h3>
-                <p className="text-muted-foreground">{facility.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Services Section */}
       <section className="py-20 bg-section-bg">

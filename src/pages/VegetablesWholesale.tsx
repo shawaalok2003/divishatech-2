@@ -94,23 +94,6 @@ const VegetablesWholesale = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-20 bg-section-bg">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-foreground mb-6">About Our Business</h2>
-            <p className="text-lg text-muted-foreground mb-4">
-              VKD Vegetables & Wholesale is the foundation of VKD Group's agricultural division. We supply fresh, high-quality produce to businesses across Kerala, from restaurants and hotels to retail stores and catering services.
-            </p>
-            <p className="text-lg text-muted-foreground mb-4">
-              Our extensive network of farmers ensures consistent supply throughout the year. We've built a reputation for reliability, quality, and fair pricing that benefits both farmers and businesses.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              With cold chain logistics and quality control at every step, we guarantee the freshest vegetables reach your doorstep, helping your business maintain the highest standards.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Vision & Mission */}
      
 

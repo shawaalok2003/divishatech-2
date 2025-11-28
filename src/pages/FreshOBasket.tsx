@@ -96,52 +96,7 @@ const FreshOBasket = () => {
       </section>
 
       {/* Product Categories */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-4">
-            Premium Product Selection
-          </h2>
-          <p className="text-lg text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-            From everyday essentials to exotic imports, we stock the finest vegetables for health-conscious customers.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <Card className="p-8 hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Local Fresh</h3>
-              <p className="text-muted-foreground mb-4">
-                Daily harvest of Kerala's finest vegetables, sourced directly from local farmers for maximum freshness.
-              </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Tomatoes, Onions, Potatoes</li>
-                <li>• Leafy Greens & Herbs</li>
-                <li>• Seasonal Vegetables</li>
-              </ul>
-            </Card>
-            <Card className="p-8 hover:shadow-xl transition-shadow border-2 border-primary">
-              <Badge className="mb-3 bg-primary text-primary-foreground">Most Popular</Badge>
-              <h3 className="text-2xl font-bold text-foreground mb-4">Exotic Imports</h3>
-              <p className="text-muted-foreground mb-4">
-                Carefully selected international produce bringing global flavors to your kitchen.
-              </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Bell Peppers & Zucchini</li>
-                <li>• Asparagus & Broccoli</li>
-                <li>• Cherry Tomatoes</li>
-              </ul>
-            </Card>
-            <Card className="p-8 hover:shadow-xl transition-shadow">
-              <h3 className="text-2xl font-bold text-foreground mb-4">Organic Range</h3>
-              <p className="text-muted-foreground mb-4">
-                Certified organic vegetables grown without chemicals for health-conscious families.
-              </p>
-              <ul className="space-y-2 text-muted-foreground">
-                <li>• Organic Greens</li>
-                <li>• Chemical-Free Produce</li>
-                <li>• Naturally Grown</li>
-              </ul>
-            </Card>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Vision & Mission removed per request */}
 
