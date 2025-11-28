@@ -48,14 +48,6 @@ const VegetablesWholesale = () => {
             <p className="text-xl text-primary-foreground/90 mb-8">
               Kerala's trusted partner for fresh produce supply. Connecting farms to businesses with reliable sourcing and efficient logistics.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-                Request Quote
-              </Button>
-              <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
-                View Catalog
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -120,7 +112,7 @@ const VegetablesWholesale = () => {
       </section>
 
       {/* Vision & Mission */}
-      <VisionMission />
+     
 
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/vegetables-wholesale" />

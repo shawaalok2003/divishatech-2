@@ -215,7 +215,7 @@ const JTEstates = () => {
       </section>
 
       {/* Vision & Mission */}
-      <VisionMission />
+      
 
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/jt-estates" />

@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
-import VisionMission from "@/components/VisionMission";
 import { Building2, Users2, Utensils, Briefcase } from "lucide-react";
 
 const SRMHotels = () => {
@@ -49,12 +48,16 @@ const SRMHotels = () => {
               Premier business and family hotel offering comfortable stays, fine dining, and exceptional event spaces in the heart of Coimbatore.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-                Book Now
-              </Button>
-              <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
-                Event Enquiry
-              </Button>
+              <a
+                href="https://www.oyorooms.com/107442/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+                  Book Now
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -184,7 +187,7 @@ const SRMHotels = () => {
       </section>
 
       {/* Vision & Mission */}
-      <VisionMission />
+      
 
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/srm-hotels" />
@@ -201,9 +204,6 @@ const SRMHotels = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
               Book Rooms
-            </Button>
-            <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
-              Request Event Proposal
             </Button>
           </div>
         </div>

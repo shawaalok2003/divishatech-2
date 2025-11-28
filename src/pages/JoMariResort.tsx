@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
-import VisionMission from "@/components/VisionMission";
 import { Waves, Dumbbell, Leaf, Utensils } from "lucide-react";
 
 const JoMariResort = () => {
@@ -155,8 +154,7 @@ const JoMariResort = () => {
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <VisionMission />
+      {/* Vision & Mission removed per request */}
 
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/jo-mari-resort" />

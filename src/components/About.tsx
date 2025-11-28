@@ -11,19 +11,19 @@ const About = () => {
           {/* Left side - Text content */}
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground">
-              VKD Group is a diversified enterprise redefining Kerala's vegetable and wellness
-              industries. What began as a local wholesale initiative has evolved into a multi-sector
-              group spanning agriculture, technology, hospitality, and real estate.
+              VKD is more than a brand — it is a legacy carried forward with pride, respect, and family 
+values. 
+Rooted in the heritage of family name Varekulam, inspired by the name of our 
+grandfather Kochapu, and strengthened by the values of our father Devasy, VKD 
+represents three generations of trust and dedication. 
             </p>
             <p className="text-lg text-muted-foreground">
-              With a commitment to sustainability, innovation, and community empowerment, we're
-              building businesses that not only thrive but also contribute positively to society and
-              the environment.
-            </p>
-            <p className="text-lg text-muted-foreground">
-              Our diverse portfolio includes vegetable wholesale operations, modern retail solutions,
-              luxury hospitality ventures, and sustainable plantation initiatives. Each business is
-              built on the foundation of excellence, innovation, and community impact.
+             To honour this lineage, VP Thankchan brought these names together and created the 
+brand VKD — a symbol of tradition, authenticity, and commitment to quality. 
+Every product we offer carries the spirit of our family: 
+hard work, integrity, and a promise to deliver only the best. 
+At VKD, we don’t just build a business — 
+we continue a legacy.
             </p>
           </div>
 

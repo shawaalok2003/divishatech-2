@@ -3,16 +3,16 @@ import { Card } from "@/components/ui/card";
 const Leadership = () => {
   const leaders = [
     {
+      image: "https://images.unsplash.com/photo-1758520144420-3e5b22e9b9a4",
+      name: "Mr. V. P. Thankachan",
+      title: "Managing Director",
+      bio: "In any business, more than anything else, you need God's blessing. Never do business with the expectation of what you will get in advance. Trust the process, stay committed, work with persistent hard work, and always remain true to your identity.",
+    },
+    {
       image: "https://images.unsplash.com/39/lIZrwvbeRuuzqOoWJUEn_Photoaday_CSD%20%281%20of%201%29-5.jpg",
       name: "Mr. Jobin Thankachan",
       title: "Chief Executive Officer",
       bio: "Jobin Thankachan leads VKD Group with a vision to modernize Kerala's agricultural and hospitality sectors. With over 15 years of experience in business development and strategic planning, he has spearheaded the group's expansion into technology-driven solutions and sustainable ventures. His commitment to ethical business practices and community empowerment has positioned VKD Group as a trusted name across multiple industries.",
-    },
-    {
-      image: "https://images.unsplash.com/photo-1758520144420-3e5b22e9b9a4",
-      name: "Mr. V. P. Thankachan",
-      title: "Managing Director",
-      bio: "V. P. Thankachan is the founding force behind VKD Group, bringing decades of experience in wholesale trade and agricultural business. His deep understanding of Kerala's agricultural landscape and his commitment to fair trade practices have been instrumental in building strong relationships with farmers and businesses alike. Under his leadership, VKD Group has grown from a local wholesale operation to a diversified enterprise touching multiple sectors.",
     },
   ];
 

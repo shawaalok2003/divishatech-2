@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
-import VisionMission from "@/components/VisionMission";
 import { Hotel, Wifi, Car, Coffee } from "lucide-react";
 
 const GrandMuziris = () => {
@@ -174,8 +173,7 @@ const GrandMuziris = () => {
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <VisionMission />
+      {/* Vision & Mission removed per request */}
 
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/grand-muziris" />

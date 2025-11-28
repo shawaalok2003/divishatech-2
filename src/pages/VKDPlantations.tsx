@@ -48,14 +48,6 @@ const VKDPlantations = () => {
             <p className="text-xl text-primary-foreground/90 mb-8">
               Committed to sustainable farming and biodiversity-focused plantations. Growing prosperity while protecting our planet.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-                Explore Projects
-              </Button>
-              <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
-                Partnership Opportunities
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -213,9 +205,6 @@ const VKDPlantations = () => {
           </div>
         </div>
       </section>
-
-      {/* Vision & Mission */}
-      <VisionMission />
 
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/vkd-plantations" />

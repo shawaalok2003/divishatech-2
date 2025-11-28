@@ -4,7 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
-import VisionMission from "@/components/VisionMission";
 import { Store, Award, Heart, Sparkles } from "lucide-react";
 
 const FreshOBasket = () => {
@@ -144,8 +143,7 @@ const FreshOBasket = () => {
         </div>
       </section>
 
-      {/* Vision & Mission */}
-      <VisionMission />
+      {/* Vision & Mission removed per request */}
 
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/fresh-o-basket" />

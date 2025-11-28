@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -8,6 +8,7 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const closeTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -93,27 +94,57 @@ const Header = () => {
             </button>
             
             {/* Businesses Dropdown */}
-            <div 
+            <div
               className="relative"
-              onMouseEnter={() => setIsDropdownOpen(true)}
-              onMouseLeave={() => setIsDropdownOpen(false)}
+              onMouseEnter={() => {
+                if (closeTimeout.current) {
+                  clearTimeout(closeTimeout.current as unknown as number);
+                  closeTimeout.current = null;
+                }
+                setIsDropdownOpen(true);
+              }}
+              onMouseLeave={() => {
+                // delay closing to improve UX when moving pointer to dropdown
+                closeTimeout.current = setTimeout(() => setIsDropdownOpen(false), 300);
+              }}
             >
               <button
+                onClick={() => {
+                  // toggle on click for accessibility on touch devices
+                  setIsDropdownOpen((v) => !v);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") setIsDropdownOpen(false);
+                }}
+                aria-haspopup="true"
+                aria-expanded={isDropdownOpen}
                 className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 flex items-center gap-1"
                 style={{ textDecoration: "none" }}
               >
                 Businesses
                 <ChevronDown className={`h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
-              
+
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-lg shadow-2xl p-6 animate-fade-in">
+                <div
+                  className="absolute top-full left-0 mt-2 w-[600px] bg-white rounded-lg shadow-2xl p-6 animate-fade-in z-50"
+                  onMouseEnter={() => {
+                    if (closeTimeout.current) {
+                      clearTimeout(closeTimeout.current as unknown as number);
+                      closeTimeout.current = null;
+                    }
+                    setIsDropdownOpen(true);
+                  }}
+                  onMouseLeave={() => {
+                    closeTimeout.current = setTimeout(() => setIsDropdownOpen(false), 300);
+                  }}
+                >
                   <div className="grid grid-cols-2 gap-3">
                     {businesses.map((business, index) => (
                       <button
                         key={index}
                         onClick={() => handleBusinessClick(business.path)}
-                        className="text-left p-3 rounded-lg hover:bg-accent/10 transition-colors group"
+                        className="text-left p-3 rounded-lg hover:bg-accent/10 transition-colors group w-full text-left"
                       >
                         <div className="text-xs font-semibold text-primary mb-1">
                           {business.category}
@@ -133,7 +164,7 @@ const Header = () => {
               className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
               style={{ textDecoration: "none" }}
             >
-              CSR
+              Charity
             </Link>
             <button
               onClick={() => scrollToSection("leadership")}
@@ -142,13 +173,7 @@ const Header = () => {
             >
               Leadership
             </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
-              style={{ textDecoration: "none" }}
-            >
-              Contact
-            </button>
+           
             <button
               onClick={() => scrollToSection("contact")}
               className="bg-accent text-accent-foreground font-semibold px-6 py-2 rounded-full hover:opacity-90 transition-opacity"
@@ -223,7 +248,7 @@ const Header = () => {
                 className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"
                 style={{ textDecoration: "none" }}
               >
-                CSR
+                Charity
               </Link>
               <button
                 onClick={() => scrollToSection("leadership")}
@@ -232,13 +257,7 @@ const Header = () => {
               >
                 Leadership
               </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"
-                style={{ textDecoration: "none" }}
-              >
-                Contact
-              </button>
+              
               
               <button
                 onClick={() => scrollToSection("contact")}
