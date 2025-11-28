@@ -85,6 +85,7 @@ const SRMHotels = () => {
           </div>
         </div>
       </section>
+      
 
       {/* Facilities Section */}
       <section className="py-20 bg-background">
