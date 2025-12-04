@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import VisionMission from "@/components/VisionMission";
+import { useState, useEffect, useRef } from "react";
 import { Leaf, TreePine, Droplets, Sprout } from "lucide-react";
 
 const VKDPlantations = () => {
@@ -31,6 +32,41 @@ const VKDPlantations = () => {
     },
   ];
 
+  // Carousel images from public folder
+  const plantationImages = [
+    "Entry .jpg",
+    "PABN0499.jpg",
+    "PABN0625.jpg",
+    "PABN0668.jpg",
+    "PABN0670.jpg",
+    "PABN0680.jpg",
+    "PABN0686.jpg",
+    "PABN0697.jpg",
+    "PABN0707.jpg",
+    "PABN0715.jpg",
+    "PABN0718.jpg",
+    "PABN0726.jpg",
+    "PABN0737.jpg",
+    "PABN0748.jpg",
+    "PABN0753.jpg",
+    "PABN0754.jpg",
+    "nutmeg’s .jpg",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // ref for the horizontal scroll carousel container
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrentIndex((i) => (i + 1) % plantationImages.length);
+    }, 4000);
+    return () => clearInterval(id);
+  }, [plantationImages.length]);
+
+  // (Grid removed) — carousel only below. If you need a scroll-animated grid, I can restore it.
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -52,25 +88,61 @@ const VKDPlantations = () => {
         </div>
       </section>
 
-      {/* Plantation Images */}
-      <section className="py-16 bg-section-bg">
+      {/* (Grid removed) showing carousel only below */}
+
+      {/* Carousel showing 3 images per view (horizontal scroll) */}
+      <section className="py-12 bg-section-bg">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <img
-              src="https://images.unsplash.com/photo-1491497895121-1334fc14d8c9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHx0ZWElMjBwbGFudGF0aW9ufGVufDB8fHx8MTc2MjM5ODkyMHww&ixlib=rb-4.1.0&q=85"
-              alt="Tea Plantation"
-              className="w-full h-72 object-cover rounded-2xl shadow-lg"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=800"
-              alt="Sustainable Farming"
-              className="w-full h-72 object-cover rounded-2xl shadow-lg"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800"
-              alt="Natural Landscape"
-              className="w-full h-72 object-cover rounded-2xl shadow-lg"
-            />
+          <div className="max-w-6xl mx-auto relative">
+            <div className="flex items-center">
+              <button
+                aria-label="Previous"
+                onClick={() => {
+                  const el = scrollRef.current;
+                  if (el) el.scrollBy({ left: -el.clientWidth, behavior: 'smooth' });
+                }}
+                className="hidden md:inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60 mr-3"
+              >
+                ‹
+              </button>
+
+              <div
+                ref={scrollRef}
+                className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory"
+                style={{ scrollSnapType: 'x mandatory' }}
+              >
+                {plantationImages.map((name, idx) => (
+                  <div
+                    key={name}
+                    className="flex-shrink-0 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/3 snap-start"
+                  >
+                    <img
+                      src={`/images/plantation/${encodeURI(name)}`}
+                      alt={`Plantation ${idx + 1}`}
+                      className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-2xl shadow-lg"
+                      loading="lazy"
+                      onError={(e) => {
+                        // eslint-disable-next-line no-console
+                        console.warn('Failed to load image:', e.currentTarget.src);
+                        // fallback to a simple SVG placeholder
+                        e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23ddd"/><text x="50%" y="50%" fill="%23666" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not available</text></svg>';
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <button
+                aria-label="Next"
+                onClick={() => {
+                  const el = scrollRef.current;
+                  if (el) el.scrollBy({ left: el.clientWidth, behavior: 'smooth' });
+                }}
+                className="hidden md:inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60 ml-3"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -142,18 +214,12 @@ const VKDPlantations = () => {
                 <div className="text-4xl font-bold mb-2">500+</div>
                 <div className="text-sm">Acres Under Cultivation</div>
               </Card>
-              <Card className="p-6 text-center bg-accent text-accent-foreground">
-                <div className="text-4xl font-bold mb-2">200+</div>
-                <div className="text-sm">Local Employees</div>
-              </Card>
+              
               <Card className="p-6 text-center bg-accent text-accent-foreground">
                 <div className="text-4xl font-bold mb-2">10K+</div>
                 <div className="text-sm">Trees Planted</div>
               </Card>
-              <Card className="p-6 text-center bg-primary text-primary-foreground">
-                <div className="text-4xl font-bold mb-2">100%</div>
-                <div className="text-sm">Organic Certified</div>
-              </Card>
+              
             </div>
           </div>
         </div>

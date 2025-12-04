@@ -4,8 +4,8 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
-import VisionMission from "@/components/VisionMission";
 import { Building, Home, TrendingUp, Shield } from "lucide-react";
+import { useRef, useEffect } from "react";
 
 const JTEstates = () => {
   const features = [
@@ -30,6 +30,34 @@ const JTEstates = () => {
       description: "Transparent dealings, on-time delivery, and post-sales support.",
     },
   ];
+
+  const jteImages = [
+    "Office cover photo .jpg",
+    "PABN0474.jpg",
+    "PABN0481.jpg",
+    "PABN0489.jpg",
+    "PABN0490.jpg",
+    "PABN0505.jpg",
+    "PABN0509.jpg",
+  ];
+
+  const jteScrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = jteScrollRef.current;
+    if (!el) return;
+    const iv = setInterval(() => {
+      const container = jteScrollRef.current;
+      if (!container) return;
+      const max = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= max - 10) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: container.clientWidth, behavior: "smooth" });
+      }
+    }, 4000);
+    return () => clearInterval(iv);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -60,20 +88,55 @@ const JTEstates = () => {
         </div>
       </section>
 
-      {/* Project Images */}
+      {/* Project Images (carousel like SRM Hotels) */}
       <section className="py-16 bg-section-bg">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <img
-              src="https://images.unsplash.com/photo-1621831337128-35676ca30868?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzYyMzk4ODk4fDA&ixlib=rb-4.1.0&q=85"
-              alt="Commercial Building"
-              className="w-full h-80 object-cover rounded-2xl shadow-lg"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800"
-              alt="Residential Complex"
-              className="w-full h-80 object-cover rounded-2xl shadow-lg"
-            />
+          <div className="max-w-6xl mx-auto relative">
+            <div className="flex items-center">
+              <button
+                aria-label="Previous"
+                onClick={() => {
+                  const el = jteScrollRef.current;
+                  if (el) el.scrollBy({ left: -el.clientWidth, behavior: "smooth" });
+                }}
+                className="hidden md:inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60 mr-3"
+              >
+                ‹
+              </button>
+
+              <div
+                ref={jteScrollRef}
+                className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory"
+                style={{ scrollSnapType: "x mandatory" }}
+              >
+                {jteImages.map((name, idx) => (
+                  <div key={name} className="flex-shrink-0 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/3 snap-start">
+                    <img
+                      src={`/images/${encodeURI("KALADY OFFICE (1)")}/${encodeURI(name)}`}
+                      alt={`JT Estates ${idx + 1}`}
+                      className="w-full h-72 md:h-80 lg:h-96 object-cover rounded-2xl shadow-lg"
+                      loading="lazy"
+                      onError={(e) => {
+                        // eslint-disable-next-line no-console
+                        console.warn("Failed to load JT Estates image:", e.currentTarget.src);
+                        e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23ddd"/><text x="50%" y="50%" fill="%23666" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not available</text></svg>';
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <button
+                aria-label="Next"
+                onClick={() => {
+                  const el = jteScrollRef.current;
+                  if (el) el.scrollBy({ left: el.clientWidth, behavior: "smooth" });
+                }}
+                className="hidden md:inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60 ml-3"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
       </section>

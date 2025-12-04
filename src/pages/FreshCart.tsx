@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Smartphone, ShoppingCart, TrendingUp, Clock } from "lucide-react";
+import { useRef, useEffect } from "react";
 
 const FreshCart = () => {
   const features = [
@@ -29,6 +30,39 @@ const FreshCart = () => {
       description: "Place orders anytime, anywhere with flexible delivery scheduling.",
     },
   ];
+
+  const marketImages = [
+    "market cover photo.jpg",
+    "PABN0519.jpg",
+    "PABN0524.jpg",
+    "PABN0533.jpg",
+    "PABN0538.jpg",
+    "PABN0543.jpg",
+    "PABN0552.jpg",
+    "PABN0553.jpg",
+    "PABN0559.jpg",
+    "PABN0571.jpg",
+    "PABN0576.jpg",
+    "PABN0580.jpg",
+  ];
+
+  const marketScrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = marketScrollRef.current;
+    if (!el) return;
+    const iv = setInterval(() => {
+      const container = marketScrollRef.current;
+      if (!container) return;
+      const max = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= max - 10) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: container.clientWidth, behavior: "smooth" });
+      }
+    }, 4000);
+    return () => clearInterval(iv);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -59,15 +93,55 @@ const FreshCart = () => {
         </div>
       </section>
 
-      {/* Platform Preview */}
+      {/* Platform Preview (market images carousel) */}
       <section className="py-16 bg-section-bg">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <img
-              src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxmcmVzaCUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzYyMzk4ODA0fDA&ixlib=rb-4.1.0&q=85"
-              alt="Fresh Cart Platform"
-              className="w-full h-96 object-cover rounded-2xl shadow-2xl"
-            />
+          <div className="max-w-6xl mx-auto relative">
+            <div className="flex items-center">
+              <button
+                aria-label="Previous"
+                onClick={() => {
+                  const el = marketScrollRef.current;
+                  if (el) el.scrollBy({ left: -el.clientWidth, behavior: "smooth" });
+                }}
+                className="hidden md:inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60 mr-3"
+              >
+                ‹
+              </button>
+
+              <div
+                ref={marketScrollRef}
+                className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory"
+                style={{ scrollSnapType: "x mandatory" }}
+              >
+                {marketImages.map((name, idx) => (
+                  <div key={name} className="flex-shrink-0 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/3 snap-start">
+                    <img
+                      src={`/images/${encodeURI("MARKET")}/${encodeURI(name)}`}
+                      alt={`Market ${idx + 1}`}
+                      className="w-full h-72 md:h-80 lg:h-96 object-cover rounded-2xl shadow-2xl"
+                      loading="lazy"
+                      onError={(e) => {
+                        // eslint-disable-next-line no-console
+                        console.warn("Failed to load market image:", e.currentTarget.src);
+                        e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23ddd"/><text x="50%" y="50%" fill="%23666" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not available</text></svg>';
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <button
+                aria-label="Next"
+                onClick={() => {
+                  const el = marketScrollRef.current;
+                  if (el) el.scrollBy({ left: el.clientWidth, behavior: "smooth" });
+                }}
+                className="hidden md:inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60 ml-3"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
       </section>

@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Building2, Users2, Utensils, Briefcase } from "lucide-react";
+import { useRef, useEffect } from "react";
 
 const SRMHotels = () => {
   const facilities = [
@@ -29,6 +30,39 @@ const SRMHotels = () => {
       description: "Fully-equipped business facilities with meeting rooms and secretarial services.",
     },
   ];
+
+  const srmImages = [
+    "Cover photo CBE Hotel .jpg",
+    "IMG_8913.jpg",
+    "IMG_8924.jpg",
+    "IMG_8925.jpg",
+    "IMG_8932.jpg",
+    "IMG_8934.jpg",
+    "IMG_8937.jpg",
+    "IMG_8944.jpg",
+    "IMG_8947.jpg",
+    "IMG_8955.jpg",
+    "IMG_8960.jpg",
+    "IMG_8965.jpg",
+  ];
+
+  const srmScrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = srmScrollRef.current;
+    if (!el) return;
+    const iv = setInterval(() => {
+      const container = srmScrollRef.current;
+      if (!container) return;
+      const max = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= max - 10) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: container.clientWidth, behavior: "smooth" });
+      }
+    }, 4000);
+    return () => clearInterval(iv);
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -66,22 +100,52 @@ const SRMHotels = () => {
       {/* Hotel Images */}
       <section className="py-16 bg-section-bg">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            <img
-              src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBob3RlbHxlbnwwfHx8fDE3NjIzOTg4OTB8MA&ixlib=rb-4.1.0&q=85"
-              alt="SRM Hotel Lobby"
-              className="w-full h-72 object-cover rounded-2xl shadow-lg"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
-              alt="Hotel Room"
-              className="w-full h-72 object-cover rounded-2xl shadow-lg"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1519167758481-83f29da8c2b0?w=800"
-              alt="Restaurant"
-              className="w-full h-72 object-cover rounded-2xl shadow-lg"
-            />
+          <div className="max-w-6xl mx-auto relative">
+            <div className="flex items-center">
+              <button
+                aria-label="Previous"
+                onClick={() => {
+                  const el = srmScrollRef.current;
+                  if (el) el.scrollBy({ left: -el.clientWidth, behavior: "smooth" });
+                }}
+                className="hidden md:inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60 mr-3"
+              >
+                ‹
+              </button>
+
+              <div
+                ref={srmScrollRef}
+                className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory"
+                style={{ scrollSnapType: "x mandatory" }}
+              >
+                {srmImages.map((name, idx) => (
+                  <div key={name} className="flex-shrink-0 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/3 snap-start">
+                    <img
+                      src={`/images/${encodeURI("SRM HOTEL")}/${encodeURI(name)}`}
+                      alt={`SRM Hotel ${idx + 1}`}
+                      className="w-full h-72 md:h-80 lg:h-96 object-cover rounded-2xl shadow-lg"
+                      loading="lazy"
+                      onError={(e) => {
+                        // eslint-disable-next-line no-console
+                        console.warn("Failed to load SRM image:", e.currentTarget.src);
+                        e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23ddd"/><text x="50%" y="50%" fill="%23666" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not available</text></svg>';
+                      }}
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <button
+                aria-label="Next"
+                onClick={() => {
+                  const el = srmScrollRef.current;
+                  if (el) el.scrollBy({ left: el.clientWidth, behavior: "smooth" });
+                }}
+                className="hidden md:inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60 ml-3"
+              >
+                ›
+              </button>
+            </div>
           </div>
         </div>
       </section>
