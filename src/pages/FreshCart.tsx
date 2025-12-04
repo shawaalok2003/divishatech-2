@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Smartphone, ShoppingCart, TrendingUp, Clock } from "lucide-react";
 import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FreshCart = () => {
   const features = [
@@ -64,6 +65,8 @@ const FreshCart = () => {
     return () => clearInterval(iv);
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -82,12 +85,16 @@ const FreshCart = () => {
               Revolutionary B2B wholesale platform connecting farmers directly to businesses. Experience the future of agricultural commerce.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-                Start Ordering
-              </Button>
-              <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
-                Watch Demo
-              </Button>
+              <a href="https://vkdfreshcart.com/LoginControl" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+                  Start Ordering
+                </Button>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.app.vkdfreshcart" target="_blank" rel="noopener noreferrer" className="inline-block">
+                <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
+                  Start Ordering (App)
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -241,8 +248,8 @@ const FreshCart = () => {
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Experience smarter sourcing, better prices, and seamless ordering with VKD Fresh Cart.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-            Create Free Account
+          <Button onClick={() => navigate('/contact')} className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+            Contact Sales Team
           </Button>
         </div>
       </section>

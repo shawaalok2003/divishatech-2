@@ -175,7 +175,10 @@ const Header = () => {
             </button>
            
             <button
-              onClick={() => scrollToSection("contact")}
+              onClick={() => {
+                setIsMobileMenuOpen(false);
+                navigate("/contact");
+              }}
               className="bg-accent text-accent-foreground font-semibold px-6 py-2 rounded-full hover:opacity-90 transition-opacity"
               style={{ textDecoration: "none" }}
             >
@@ -260,7 +263,10 @@ const Header = () => {
               
               
               <button
-                onClick={() => scrollToSection("contact")}
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  navigate("/contact");
+                }}
                 className="bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity w-full"
                 style={{ textDecoration: "none" }}
               >

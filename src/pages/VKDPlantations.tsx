@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import VisionMission from "@/components/VisionMission";
 import { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Leaf, TreePine, Droplets, Sprout } from "lucide-react";
 
 const VKDPlantations = () => {
@@ -57,6 +58,7 @@ const VKDPlantations = () => {
 
   // ref for the horizontal scroll carousel container
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -237,7 +239,7 @@ const VKDPlantations = () => {
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Join us in creating a greener future through responsible plantation management.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+          <Button onClick={() => navigate('/contact')} className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
             Get in Touch
           </Button>
         </div>

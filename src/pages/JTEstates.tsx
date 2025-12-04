@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Building, Home, TrendingUp, Shield } from "lucide-react";
 import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const JTEstates = () => {
   const features = [
@@ -59,6 +60,8 @@ const JTEstates = () => {
     return () => clearInterval(iv);
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -76,14 +79,7 @@ const JTEstates = () => {
             <p className="text-xl text-primary-foreground/90 mb-8">
               Building smart, sustainable commercial and residential real estate projects that shape Kerala's future.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-                View Projects
-              </Button>
-              <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
-                Schedule Site Visit
-              </Button>
-            </div>
+  
           </div>
         </div>
       </section>
@@ -162,49 +158,6 @@ const JTEstates = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      
-      {/* Why Choose Section */}
-      <section className="py-20 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-foreground mb-6">Why Choose JT Estates</h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              With a commitment to quality, transparency, and customer satisfaction, JT Estates has become a trusted name in Kerala's real estate market.
-            </p>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">Quality Construction</h3>
-                <p className="text-muted-foreground">
-                  We use premium materials and follow stringent quality standards at every stage of construction.
-                </p>
-              </Card>
-              <Card className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">On-Time Delivery</h3>
-                <p className="text-muted-foreground">
-                  Our projects are completed within promised timelines with regular progress updates to buyers.
-                </p>
-              </Card>
-              <Card className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">Legal Compliance</h3>
-                <p className="text-muted-foreground">
-                  All properties are fully compliant with legal regulations and come with clear documentation.
-                </p>
-              </Card>
-              <Card className="p-6">
-                <h3 className="text-xl font-bold text-foreground mb-3">After-Sales Support</h3>
-                <p className="text-muted-foreground">
-                  We provide comprehensive maintenance support and address concerns even after possession.
-                </p>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Vision & Mission */}
-      
-
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/jt-estates" />
 
@@ -217,8 +170,8 @@ const JTEstates = () => {
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Discover prime real estate opportunities with JT Estates. Your dream property awaits.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-            Contact Our Team
+          <Button onClick={() => navigate('/contact')} className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+            Contact Sales Team
           </Button>
         </div>
       </section>

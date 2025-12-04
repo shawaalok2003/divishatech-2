@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Truck, Leaf, Users, CheckCircle } from "lucide-react";
 import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const VegetablesWholesale = () => {
   const features = [
@@ -59,6 +60,8 @@ const VegetablesWholesale = () => {
     }, 4000);
     return () => clearInterval(iv);
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
@@ -168,7 +171,7 @@ const VegetablesWholesale = () => {
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Join hundreds of businesses that trust VKD for their fresh produce needs.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+          <Button onClick={() => navigate('/contact')} className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
             Contact Sales Team
           </Button>
         </div>

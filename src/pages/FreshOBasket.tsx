@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Store, Award, Heart, Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const FreshOBasket = () => {
   const features = [
@@ -29,6 +30,8 @@ const FreshOBasket = () => {
       description: "Pleasant, hygienic, and customer-friendly supermarket environment.",
     },
   ];
+
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
@@ -112,8 +115,8 @@ const FreshOBasket = () => {
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Experience premium shopping at Fresh O Basket. Fresh produce, exceptional quality, unbeatable prices.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-            Find Nearest Store
+          <Button onClick={() => navigate('/contact')} className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+            Contact Sales Team
           </Button>
         </div>
       </section>

@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Building2, Users2, Utensils, Briefcase } from "lucide-react";
 import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SRMHotels = () => {
   const facilities = [
@@ -63,6 +64,8 @@ const SRMHotels = () => {
     }, 4000);
     return () => clearInterval(iv);
   }, []);
+
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-background">
@@ -249,8 +252,8 @@ const SRMHotels = () => {
             Whether for business or celebration, SRM Hotels provides the perfect venue.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-              Book Rooms
+            <Button onClick={() => navigate('/contact')} className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+              Contact Sales Team
             </Button>
           </div>
         </div>

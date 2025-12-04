@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Waves, Dumbbell, Leaf, Utensils } from "lucide-react";
 import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const JoMariResort = () => {
   const amenities = [
@@ -64,6 +65,8 @@ const JoMariResort = () => {
     return () => clearInterval(iv);
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -85,9 +88,7 @@ const JoMariResort = () => {
               <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full">
                 Book Your Stay
               </Button>
-              <Button variant="outline" className="text-lg px-8 py-6 rounded-full">
-                Explore Packages
-              </Button>
+             
             </div>
           </div>
         </div>
@@ -184,8 +185,8 @@ const JoMariResort = () => {
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Transform your life with a rejuvenating retreat at Jo Mari Heaven Resort.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-            Reserve Now
+          <Button onClick={() => navigate('/contact')} className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+            Contact Sales Team
           </Button>
         </div>
       </section>

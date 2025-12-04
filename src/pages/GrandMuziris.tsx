@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import OtherBusinesses from "@/components/OtherBusinesses";
 import { Hotel, Wifi, Car, Coffee } from "lucide-react";
 import { useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const GrandMuziris = () => {
   const amenities = [
@@ -58,6 +59,8 @@ const GrandMuziris = () => {
     return () => clearInterval(iv);
   }, []);
 
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -75,14 +78,7 @@ const GrandMuziris = () => {
             <p className="text-xl text-primary-foreground/90 mb-8">
               Where tradition meets modern luxury. Experience Kerala's finest hospitality with world-class amenities and authentic cultural charm.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-                Book Your Stay
-              </Button>
-              <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
-                Virtual Tour
-              </Button>
-            </div>
+    
           </div>
         </div>
       </section>
@@ -178,8 +174,8 @@ const GrandMuziris = () => {
           <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Book your stay and discover why Grand Muziris is Kerala's preferred luxury destination.
           </p>
-          <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
-            Check Availability
+          <Button onClick={() => navigate('/contact')} className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+            Contact Sales Team
           </Button>
         </div>
       </section>
