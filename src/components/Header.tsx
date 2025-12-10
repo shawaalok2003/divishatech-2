@@ -92,6 +92,13 @@ const Header = () => {
             >
               About
             </button>
+            <button
+              onClick={() => navigate("/our-journey")}
+              className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200"
+              style={{ textDecoration: "none" }}
+            >
+              Our Journey
+            </button>
             
             {/* Businesses Dropdown */}
             <div
@@ -222,6 +229,16 @@ const Header = () => {
                 style={{ textDecoration: "none" }}
               >
                 About
+              </button>
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  navigate("/our-journey");
+                }}
+                className="text-white font-medium text-base hover:bg-white/10 px-4 py-2 rounded-full transition-all duration-200 text-left"
+                style={{ textDecoration: "none" }}
+              >
+                Our Journey
               </button>
               
               {/* Mobile Businesses Section */}

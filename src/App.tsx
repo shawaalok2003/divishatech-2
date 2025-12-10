@@ -15,6 +15,7 @@ import SRMHotels from "./pages/SRMHotels";
 import JTEstates from "./pages/JTEstates";
 import VKDPlantations from "./pages/VKDPlantations";
 import CSR from "./pages/CSR";
+import OurJourney from "./pages/OurJourney";
 import Contact from "@/components/Contact";
 import HoverReceiver from "@/visual-edits/VisualEditsMessenger";
 
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/jt-estates" element={<JTEstates />} />
           <Route path="/vkd-plantations" element={<VKDPlantations />} />
           <Route path="/csr" element={<CSR />} />
+          <Route path="/our-journey" element={<OurJourney />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

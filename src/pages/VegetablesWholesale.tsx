@@ -44,7 +44,6 @@ const VegetablesWholesale = () => {
     "PABN0559.jpg",
     "PABN0571.jpg",
     "PABN0576.jpg",
-    "PABN0580.jpg",
   ];
 
   const marketScrollRef = useRef<HTMLDivElement | null>(null);
