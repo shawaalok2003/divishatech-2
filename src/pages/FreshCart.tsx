@@ -33,18 +33,14 @@ const FreshCart = () => {
   ];
 
   const marketImages = [
-    "market cover photo.jpg",
-    "PABN0519.jpg",
-    "PABN0524.jpg",
-    "PABN0533.jpg",
-    "PABN0538.jpg",
-    "PABN0543.jpg",
-    "PABN0552.jpg",
-    "PABN0553.jpg",
-    "PABN0559.jpg",
-    "PABN0571.jpg",
-    "PABN0576.jpg",
-    "PABN0580.jpg",
+    "Office cover photo .jpg",
+    "PABN0474.jpg",
+    "PABN0481.jpg",
+    "PABN0489.jpg",
+    "PABN0490.jpg",
+    "PABN0505.jpg",
+    "PABN0509.jpg",
+    "_.jpg",
   ];
 
   const marketScrollRef = useRef<HTMLDivElement | null>(null);
@@ -91,7 +87,7 @@ const FreshCart = () => {
                 </Button>
               </a>
               <a href="https://play.google.com/store/apps/details?id=com.app.vkdfreshcart" target="_blank" rel="noopener noreferrer" className="inline-block">
-                <Button variant="outline" className="border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary text-lg px-8 py-6 rounded-full">
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
                   Start Ordering (App)
                 </Button>
               </a>
@@ -124,13 +120,13 @@ const FreshCart = () => {
                 {marketImages.map((name, idx) => (
                   <div key={name} className="flex-shrink-0 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/3 snap-start">
                     <img
-                      src={`/images/${encodeURI("MARKET")}/${encodeURI(name)}`}
-                      alt={`Market ${idx + 1}`}
+                      src={`/images/${encodeURI("KALADY OFFICE (1)")}/${encodeURI(name)}`}
+                      alt={`Office ${idx + 1}`}
                       className="w-full h-72 md:h-80 lg:h-96 object-cover rounded-2xl shadow-2xl"
                       loading="lazy"
                       onError={(e) => {
                         // eslint-disable-next-line no-console
-                        console.warn("Failed to load market image:", e.currentTarget.src);
+                        console.warn("Failed to load office image:", e.currentTarget.src);
                         e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23ddd"/><text x="50%" y="50%" fill="%23666" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not available</text></svg>';
                       }}
                     />

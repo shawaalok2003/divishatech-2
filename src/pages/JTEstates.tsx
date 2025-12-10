@@ -33,13 +33,21 @@ const JTEstates = () => {
   ];
 
   const jteImages = [
-    "Office cover photo .jpg",
-    "PABN0474.jpg",
-    "PABN0481.jpg",
-    "PABN0489.jpg",
-    "PABN0490.jpg",
-    "PABN0505.jpg",
-    "PABN0509.jpg",
+    "Entry .jpg",
+    "PABN0625.jpg",
+    "PABN0668.jpg",
+    "PABN0670.jpg",
+    "PABN0680.jpg",
+    "PABN0686.jpg",
+    "PABN0697.jpg",
+    "PABN0707.jpg",
+    "PABN0715.jpg",
+    "PABN0718.jpg",
+    "PABN0726.jpg",
+    "PABN0737.jpg",
+    "PABN0748.jpg",
+    "PABN0753.jpg",
+    "PABN0754.jpg",
   ];
 
   const jteScrollRef = useRef<HTMLDivElement | null>(null);
@@ -108,13 +116,13 @@ const JTEstates = () => {
                 {jteImages.map((name, idx) => (
                   <div key={name} className="flex-shrink-0 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/3 snap-start">
                     <img
-                      src={`/images/${encodeURI("KALADY OFFICE (1)")}/${encodeURI(name)}`}
-                      alt={`JT Estates ${idx + 1}`}
+                      src={`/images/${encodeURI("plantation")}/${encodeURI(name)}`}
+                      alt={`Plantation ${idx + 1}`}
                       className="w-full h-72 md:h-80 lg:h-96 object-cover rounded-2xl shadow-lg"
                       loading="lazy"
                       onError={(e) => {
                         // eslint-disable-next-line no-console
-                        console.warn("Failed to load JT Estates image:", e.currentTarget.src);
+                        console.warn("Failed to load plantation image:", e.currentTarget.src);
                         e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23ddd"/><text x="50%" y="50%" fill="%23666" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not available</text></svg>';
                       }}
                     />

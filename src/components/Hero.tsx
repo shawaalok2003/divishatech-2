@@ -39,12 +39,6 @@ const Hero = () => {
           >
             Partner With Us
           </Button>
-          <Button
-            onClick={() => scrollToSection("contact")}
-            className="bg-white text-black hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
-          >
-            Contact VKD Group
-          </Button>
         </div>
       </div>
     </section>

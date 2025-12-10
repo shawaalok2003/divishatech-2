@@ -33,18 +33,9 @@ const JoMariResort = () => {
   ];
 
   const joMariImages = [
-    "Cover photo .jpg",
-    "PABN0587.jpg",
-    "PABN0591.jpg",
-    "PABN0600.jpg",
-    "PABN0603.jpg",
-    "PABN0610.jpg",
-    "PABN0611.jpg",
-    "PABN0615.jpg",
-    "PABN0634.jpg",
-    "PABN0637.jpg",
-    "PABN0639.jpg",
-    "PABN0652.jpg",
+    "WhatsApp Image 2025-12-10 at 12.32.15 (1).jpeg",
+    "WhatsApp Image 2025-12-10 at 12.32.15.jpeg",
+    "WhatsApp Image 2025-12-10 at 12.32.16.jpeg",
   ];
 
   const joMariScrollRef = useRef<HTMLDivElement | null>(null);
@@ -118,7 +109,7 @@ const JoMariResort = () => {
                 {joMariImages.map((name, idx) => (
                   <div key={name} className="flex-shrink-0 w-2/3 sm:w-1/2 md:w-1/3 lg:w-1/3 snap-start">
                     <img
-                      src={`/images/${encodeURI("ILLITHODE RESORT")}/${encodeURI(name)}`}
+                      src={`/images/${encodeURI("JO")}/${encodeURI(name)}`}
                       alt={`Jo Mari Resort ${idx + 1}`}
                       className="w-full h-72 md:h-80 lg:h-96 object-cover rounded-2xl shadow-lg"
                       loading="lazy"
