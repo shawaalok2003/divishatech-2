@@ -36,7 +36,6 @@ const VKDPlantations = () => {
   // Carousel images from public folder
   const plantationImages = [
     "Entry .jpg",
-    "PABN0499.jpg",
     "PABN0625.jpg",
     "PABN0668.jpg",
     "PABN0670.jpg",

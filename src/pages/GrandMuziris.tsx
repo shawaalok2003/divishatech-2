@@ -89,6 +89,18 @@ const GrandMuziris = () => {
             <p className="text-xl text-primary-foreground/90 mb-8">
               Where tradition meets modern luxury. Experience Kerala's finest hospitality with world-class amenities and authentic cultural charm.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://share.google/WpQW0cDGwicjeCHbl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 py-6 rounded-full">
+                  Visit Website
+                </Button>
+              </a>
+            </div>
     
           </div>
         </div>
