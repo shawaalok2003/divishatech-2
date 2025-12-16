@@ -104,7 +104,7 @@ const Footer = () => {
                     className="text-white/80 hover:text-white text-sm transition-colors"
                     style={{ textDecoration: "none" }}
                   >
-                    +91 9961487528
+                   +91 85472 97528
                   </a>
                 </div>
                 <div className="flex items-center gap-3">

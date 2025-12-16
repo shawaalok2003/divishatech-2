@@ -14,6 +14,7 @@ import {
   ArrowRight,
   Quote
 } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const CSR = () => {
   const pillars = [
@@ -99,6 +100,40 @@ const CSR = () => {
     "Scaling organic farming programs across Kerala"
   ];
 
+  const charityImages = [
+    "copy_7926E503-7A17-4B02-9FEA-68AC67065FF2_compressed.jpeg",
+    "PABN2256_compressed.jpeg",
+    "PABN2260_compressed.jpeg",
+    "PABN2262_compressed.jpeg",
+    "PABN2265_compressed.jpeg",
+    "PABN2272_compressed.jpeg",
+    "PABN2276_compressed.jpeg",
+    "PABN2279_compressed.jpeg",
+    "PABN2280_compressed.jpeg",
+    "PABN2282_compressed.jpeg",
+    "PABN2285_compressed.jpeg",
+    "PABN2288_compressed.jpeg",
+    "PABN2289_compressed.jpeg",
+  ];
+
+  const charityScrollRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const el = charityScrollRef.current;
+    if (!el) return;
+    const iv = setInterval(() => {
+      const container = charityScrollRef.current;
+      if (!container) return;
+      const max = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= max - 10) {
+        container.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        container.scrollBy({ left: container.clientWidth, behavior: "smooth" });
+      }
+    }, 4000);
+    return () => clearInterval(iv);
+  }, []);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -138,6 +173,61 @@ const CSR = () => {
               >
                 Partner with Our Initiatives
               </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Impact Gallery */}
+      <section className="py-16 bg-section-bg">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto relative">
+            <div className="flex items-center mb-6 justify-between">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">Impact Gallery</h2>
+              <div className="hidden md:flex gap-3">
+                <button
+                  aria-label="Previous"
+                  onClick={() => {
+                    const el = charityScrollRef.current;
+                    if (el) el.scrollBy({ left: -el.clientWidth, behavior: "smooth" });
+                  }}
+                  className="inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60"
+                >
+                  ‹
+                </button>
+                <button
+                  aria-label="Next"
+                  onClick={() => {
+                    const el = charityScrollRef.current;
+                    if (el) el.scrollBy({ left: el.clientWidth, behavior: "smooth" });
+                  }}
+                  className="inline-flex items-center justify-center bg-black/40 text-white p-2 rounded-full hover:bg-black/60"
+                >
+                  ›
+                </button>
+              </div>
+            </div>
+
+            <div
+              ref={charityScrollRef}
+              className="flex gap-4 overflow-x-auto no-scrollbar snap-x snap-mandatory"
+              style={{ scrollSnapType: "x mandatory" }}
+            >
+              {charityImages.map((name, idx) => (
+                <div key={name} className="flex-shrink-0 w-4/5 sm:w-1/2 md:w-1/3 lg:w-1/3 snap-start">
+                  <img
+                    src={`/images/${encodeURI("charity")}/${encodeURI(name)}`}
+                    alt={`CSR impact ${idx + 1}`}
+                    className="w-full h-72 md:h-80 lg:h-96 object-cover rounded-2xl shadow-2xl"
+                    loading="lazy"
+                    onError={(e) => {
+                      // eslint-disable-next-line no-console
+                      console.warn("Failed to load charity image:", e.currentTarget.src);
+                      e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><rect width="100%" height="100%" fill="%23ddd"/><text x="50%" y="50%" fill="%23666" font-size="24" text-anchor="middle" dominant-baseline="middle">Image not available</text></svg>';
+                    }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>

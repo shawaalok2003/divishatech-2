@@ -35,12 +35,8 @@ const FreshCart = () => {
   const marketImages = [
     "Office cover photo .jpg",
     "PABN0474.jpg",
-    "PABN0481.jpg",
     "PABN0489.jpg",
-    "PABN0490.jpg",
     "PABN0505.jpg",
-    "PABN0509.jpg",
-    "_.jpg",
   ];
 
   const marketScrollRef = useRef<HTMLDivElement | null>(null);

@@ -94,7 +94,7 @@ const Contact = () => {
             <Card className="p-6">
               <h3 className="text-xl font-bold text-foreground mb-2">Phone</h3>
               <a href="tel:+919961487528" className="text-primary hover:underline">
-                +91 9961487528
+               +91 85472 97528
               </a>
             </Card>
 

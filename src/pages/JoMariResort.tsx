@@ -33,6 +33,21 @@ const JoMariResort = () => {
   ];
 
   const joMariImages = [
+    "Cover photo _compressed.jpeg",
+    "PABN0587_compressed.jpeg",
+    "PABN0591_compressed.jpeg",
+    "PABN0600_compressed.jpeg",
+    "PABN0603_compressed.jpeg",
+    "PABN0610_compressed.jpeg",
+    "PABN0611_compressed.jpeg",
+    "PABN0615_compressed.jpeg",
+    "PABN0634_compressed.jpeg",
+    "PABN0637_compressed.jpeg",
+    "PABN0639_compressed.jpeg",
+    "PABN0652_compressed.jpeg",
+    "PABN0656_compressed.jpeg",
+    "PABN0657_compressed.jpeg",
+    "PABN0661_compressed.jpeg",
     "WhatsApp Image 2025-12-10 at 12.32.15 (1).jpeg",
     "WhatsApp Image 2025-12-10 at 12.32.15.jpeg",
     "WhatsApp Image 2025-12-10 at 12.32.16.jpeg",

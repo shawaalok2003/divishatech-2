@@ -6,64 +6,56 @@ import { Link } from "react-router-dom";
 const Businesses = () => {
   const businesses = [
     {
-      image:
-        "https://images.unsplash.com/photo-1579113800032-c38bd7635818?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzYyMzk4ODA0fDA&ixlib=rb-4.1.0&q=85",
+      image: "/images/MARKET/market cover photo.jpg",
       category: "Agriculture",
       name: "VKD Vegetables & Wholesale",
       description: "Supplying fresh produce with reliable sourcing and efficient logistics.",
       path: "/vegetables-wholesale",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1597362925123-77861d3fbac7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwyfHxmcmVzaCUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzYyMzk4ODA0fDA&ixlib=rb-4.1.0&q=85",
+      image: "/images/KALADY OFFICE (1)/Office cover photo .jpg",
       category: "Technology",
       name: "VKD Fresh Cart",
       description: "Online B2B wholesale platform connecting farmers and businesses.",
       path: "/fresh-cart",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1609126986933-e3c84f19d49c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxmcmVzaCUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzYyMzk4ODA0fDA&ixlib=rb-4.1.0&q=85",
+      image: "https://images.unsplash.com/photo-1609126986933-e3c84f19d49c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDJ8MHwxfHNlYXJjaHwzfHxmcmVzaCUyMHZlZ2V0YWJsZXN8ZW58MHx8fHwxNzYyMzk4ODA0fDA&ixlib=rb-4.1.0&q=85",
       category: "Retail",
       name: "VKD Fresh O Basket",
       description: "Premium supermarket for exotic and fresh vegetables.",
       path: "/fresh-o-basket",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1753898464732-85e0f3df8a53?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzR8MHwxfHNlYXJjaHw0fHx3ZWxsbmVzcyUyMHJlc29ydHxlbnwwfHx8fDE3NjIzOTg4MTN8MA&ixlib=rb-4.1.0&q=85",
+      image: "/images/JO/Cover photo _compressed.jpeg",
       category: "Hospitality",
       name: "Jo Mari Heaven Resort",
       description: "Wellness retreat offering yoga, spa therapies, and organic dining.",
       path: "/jo-mari-resort",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1561501900-3701fa6a0864?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbHxlbnwwfHx8fDE3NjIzOTg4OTB8MA&ixlib=rb-4.1.0&q=85",
+      image: "/images/PARAVOOR HOTEL/cover photo muziris__compressed.jpeg",
       category: "Hospitality",
       name: "Grand Muziris Hotel",
       description: "Blending tradition and modern luxury for travelers.",
       path: "/grand-muziris",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBob3RlbHxlbnwwfHx8fDE3NjIzOTg4OTB8MA&ixlib=rb-4.1.0&q=85",
+      image: "/images/SRM HOTEL/Cover photo CBE Hotel .jpg",
       category: "Hospitality",
       name: "SRM Hotels Coimbatore",
       description: "Business and family hotel with fine dining and event spaces.",
       path: "/srm-hotels",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1621831337128-35676ca30868?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODF8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwYnVpbGRpbmd8ZW58MHx8fHwxNzYyMzk4ODk4fDA&ixlib=rb-4.1.0&q=85",
+      image: "/images/ILLITHODE RESORT/Cover photo .jpg",
       category: "Real Estate",
       name: "JT Estates",
       description: "Smart, sustainable commercial and residential real estate projects.",
       path: "/jt-estates",
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1491497895121-1334fc14d8c9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzV8MHwxfHNlYXJjaHwxfHx0ZWElMjBwbGFudGF0aW9ufGVufDB8fHx8MTc2MjM5ODkyMHww&ixlib=rb-4.1.0&q=85",
+      image: "/images/plantation/Cover photo .jpg",
       category: "Agriculture",
       name: "VKD Plantations Pvt. Ltd.",
       description: "Sustainable farming and biodiversity-focused plantations.",

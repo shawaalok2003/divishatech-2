@@ -51,12 +51,16 @@ const FreshOBasket = () => {
               Your neighborhood premium supermarket for exotic and fresh vegetables. Experience quality produce in a modern shopping environment.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full">
-                Visit Store
-              </Button>
-              <Button variant="outline" className="text-lg px-8 py-6 rounded-full">
-                View Locations
-              </Button>
+              <a
+                href="https://play.google.com/store/apps/details?id=com.vkdfreshoo"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full">
+                  Download our app
+                </Button>
+              </a>
             </div>
           </div>
         </div>

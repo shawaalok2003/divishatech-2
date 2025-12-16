@@ -33,12 +33,23 @@ const GrandMuziris = () => {
   ];
 
   const gmImages = [
-    "cover photo muziris_.jpg",
-    "PABN8211.jpg",
-    "PABN8215.jpg",
-    "PABN8227.jpg",
-    "PABN8231.jpg",
-    "PABN8248.jpg",
+    "cover photo muziris__compressed.jpeg",
+    "IMG_3030_compressed.jpeg",
+    "IMG_3042_compressed.jpeg",
+    "IMG_3053_compressed.jpeg",
+    "IMG_3057_compressed.jpeg",
+    "IMG_3062_compressed.jpeg",
+    "PABN8211_compressed.jpeg",
+    "PABN8215_compressed.jpeg",
+    "PABN8227_compressed.jpeg",
+    "PABN8231_compressed.jpeg",
+    "PABN8248_compressed.jpeg",
+    "20251119-PABN8196_compressed.jpeg",
+    "20251119-PABN8212_compressed.jpeg",
+    "20251119-PABN8214_compressed.jpeg",
+    "20251119-PABN8215_compressed.jpeg",
+    "20251119-PABN8231_compressed.jpeg",
+    "20251119-PABN8243_compressed.jpeg",
   ];
 
   const gmScrollRef = useRef<HTMLDivElement | null>(null);
