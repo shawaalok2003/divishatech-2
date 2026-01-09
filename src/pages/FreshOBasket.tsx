@@ -52,13 +52,33 @@ const FreshOBasket = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
+                href="https://vkdfreshobasket.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full">
+                  Visit Website
+                </Button>
+              </a>
+              <a
                 href="https://play.google.com/store/apps/details?id=com.vkdfreshoo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"
               >
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full">
-                  Download our app
+                  Download on Play Store
+                </Button>
+              </a>
+              <a
+                href="https://apps.apple.com/in/app/vkd-fresho/id6740423532"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
+              >
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full">
+                  Download on App Store
                 </Button>
               </a>
             </div>

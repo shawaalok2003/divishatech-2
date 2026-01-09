@@ -91,7 +91,7 @@ const GrandMuziris = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://share.google/WpQW0cDGwicjeCHbl"
+                href="https://grandmuzirishotel.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"

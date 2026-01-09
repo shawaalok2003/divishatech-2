@@ -161,7 +161,51 @@ const VegetablesWholesale = () => {
 
       {/* About Section */}
       {/* Vision & Mission */}
-     
+      
+      {/* Locations Section */}
+      <section className="py-20 bg-section-bg">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-foreground mb-12">
+              Our Presence Across Kerala
+            </h2>
+            <div className="bg-card rounded-2xl shadow-lg p-8 md:p-12">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6 text-center">
+                VKD Vegetables proudly stands strong in every market it serves. Its presence is spread across:
+              </p>
+              <div className="grid md:grid-cols-2 gap-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="text-lg text-foreground">VKD Vegetables Aluva</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="text-lg text-foreground">VKD Vegetables Maradu</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="text-lg text-foreground">VKD Vegetables Kottapuram</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="text-lg text-foreground">VKD Vegetables Paravur</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="text-lg text-foreground">VKD Vegetables Kalady</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary flex-shrink-0" />
+                  <span className="text-lg text-foreground">VKD Vegetables Kothamangalam</span>
+                </div>
+              </div>
+              <p className="text-lg text-muted-foreground text-center italic">
+                With its central hub in <strong className="text-foreground">Coimbatore</strong>, consistently delivering the highest-quality produce to each of these cherished locations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Other Businesses */}
       <OtherBusinesses currentPath="/vegetables-wholesale" />
