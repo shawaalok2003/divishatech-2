@@ -51,29 +51,20 @@ const CSR = () => {
       description: "Supporting small farmers with training in sustainable farming and digital market access via VKD Fresh Cart.",
       image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop"
     },
-    {
-      title: "Green Kerala Drive",
-      description: "Ongoing reforestation initiative — planting 10,000+ trees near VKD plantation zones and community areas.",
-      image: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=600&fit=crop"
-    },
+
     {
       title: "Wellness for All Initiative",
-      description: "Free wellness camps, yoga sessions, and nutrition workshops organized by Jo Mari Heaven Resort.",
+      description: "",
       image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop"
     },
-    {
-      title: "Educate to Elevate Project",
-      description: "Scholarships and digital learning support for children of farmers and hospitality workers.",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop"
-    }
+    
   ];
 
   const stats = [
     { icon: "🌳", value: "10,000+", label: "Trees Planted" },
     { icon: "👩‍🌾", value: "500+", label: "Farmers Trained" },
-    { icon: "🎓", value: "300+", label: "Students Supported" },
     { icon: "🚰", value: "25+", label: "Villages Benefitted" },
-    { icon: "⚡", value: "100%", label: "Renewable Energy Integration" }
+
   ];
 
   const testimonials = [
@@ -332,7 +323,7 @@ const CSR = () => {
           <h2 className="text-4xl font-bold text-center mb-12">
             Our Impact in Numbers
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-5xl mb-3">{stat.icon}</div>

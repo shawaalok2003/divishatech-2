@@ -33,18 +33,17 @@ const VegetablesWholesale = () => {
   ];
 
   const marketImages = [
+    "PABN2356.jpg",
+    "PABN2362.jpg",
+    "PABN2389.jpg",
     "market cover photo.jpg",
     "PABN0519.jpg",
     "PABN0524.jpg",
     "PABN0538.jpg",
     "PABN0571.jpg",
     "PABN0576.jpg",
-    "PABN0580.jpg",
     "PABN2297.jpg",
     "PABN2329.jpg",
-    "PABN2356.jpg",
-    "PABN2362.jpg",
-    "PABN2389.jpg",
   ];
 
   const marketScrollRef = useRef<HTMLDivElement | null>(null);

@@ -33,6 +33,9 @@ const JoMariResort = () => {
   ];
 
   const joMariImages = [
+     "WhatsApp Image 2025-12-10 at 12.32.15 (1).jpeg",
+    "WhatsApp Image 2025-12-10 at 12.32.15.jpeg",
+    "WhatsApp Image 2025-12-10 at 12.32.16.jpeg",
     "Cover photo _compressed.jpeg",
     "PABN0587_compressed.jpeg",
     "PABN0591_compressed.jpeg",
@@ -48,9 +51,6 @@ const JoMariResort = () => {
     "PABN0656_compressed.jpeg",
     "PABN0657_compressed.jpeg",
     "PABN0661_compressed.jpeg",
-    "WhatsApp Image 2025-12-10 at 12.32.15 (1).jpeg",
-    "WhatsApp Image 2025-12-10 at 12.32.15.jpeg",
-    "WhatsApp Image 2025-12-10 at 12.32.16.jpeg",
   ];
 
   const joMariScrollRef = useRef<HTMLDivElement | null>(null);
