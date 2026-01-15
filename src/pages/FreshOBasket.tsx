@@ -52,7 +52,7 @@ const FreshOBasket = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://vkdfreshobasket.com"
+                href="https://www.vkdfreshobasket.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block"
